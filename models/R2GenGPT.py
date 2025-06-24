@@ -46,7 +46,9 @@ class R2GenGPT(pl.LightningModule):
             print(f'Loading Trainable vision encoder:{args.vision_model} -- Done')
 
         print('Loading LLAMA')
-        self.llama_tokenizer = LlamaTokenizer.from_pretrained(args.llama_model, use_fast=False)
+        # self.llama_tokenizer = LlamaTokenizer.from_pretrained(args.llama_model, use_fast=False)
+        self.llama_tokenizer = LlamaTokenizer.from_pretrained("/kaggle/input/llama-2/pytorch/7b-chat-hf/1", use_fast=False)
+
         self.llama_tokenizer.pad_token_id = 0
         if args.low_resource:
             self.llama_model = LlamaForCausalLM.from_pretrained(

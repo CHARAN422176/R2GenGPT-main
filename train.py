@@ -44,6 +44,7 @@ def main():
     os.makedirs(args.savedmodel_path, exist_ok=True)
     pprint(vars(args))
     seed_everything(42, workers=True)
+    args.llama_model = "/kaggle/input/llama-2/pytorch/7b-chat-hf/1"
     train(args)
 
 
