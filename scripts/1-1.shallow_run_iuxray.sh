@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dataset="iu_xray"
-annotation="data/iu_xray/annotation.json"
+annotation="/kaggle/input/iu-xray/iu_xray/annotation.json"
 base_dir="./kaggle/input/iu-xray/iu_xray/images"
 
 version="v1_shallow"
