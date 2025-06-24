@@ -2,7 +2,7 @@
 
 dataset="iu_xray"
 annotation="data/iu_xray/annotation.json"
-base_dir="./data/iu_xray/images"
+base_dir="./kaggle/input/iu-xray/iu_xray/images"
 
 version="v1_shallow"
 savepath="./save/$dataset/$version"
