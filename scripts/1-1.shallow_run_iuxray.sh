@@ -11,8 +11,8 @@ python -u train.py \
     --dataset ${dataset} \
     --annotation ${annotation} \
     --base_dir ${base_dir} \
-    --batch_size 8 \
-    --val_batch_size 12 \
+    --batch_size 1 \
+    --val_batch_size 1 \
     --freeze_vm True \
     --vis_use_lora False \
     --savedmodel_path ${savepath} \
