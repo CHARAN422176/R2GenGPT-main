@@ -61,7 +61,11 @@ class FieldParser:
         # chest x-ray images
         images = []
         for image_path in features['image_path']:
-            with Image.open(os.path.join(self.args.base_dir, image_path)) as pil:
+            full_path = os.path.join("/kaggle/input/iu-xray/iu_xray/images", image_path)
+            if not os.path.exists(full_path):
+                raise FileNotFoundError(f"❌ Image not found: {full_path}")
+            # with Image.open(os.path.join(self.args.base_dir, image_path)) as pil:
+            with Image.open(full_path) as pil:
                 array = np.array(pil, dtype=np.uint8)
                 if array.shape[-1] != 3 or len(array.shape) != 3:
                     array = np.array(pil.convert("RGB"), dtype=np.uint8)
